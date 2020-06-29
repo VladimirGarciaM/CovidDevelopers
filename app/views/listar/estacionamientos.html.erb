@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <%= stylesheet_link_tag "style"%>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flexboxgrid/6.3.1/flexboxgrid.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.5/examples/album/">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+    <title>Registrar Estacionamientos</title>
+  </head>
+    <body>
+        <header>
+        <nav class="navbar navbar-expand-lg navbar-dark fixed-top bg-secondary">
+            <img class="img-logo" src="<%= image_path('logo.png') %>"  alt="Logo de PostresFacilito" >
+                  <%= link_to "ARKING", inicio_path, class:"navbar-brand title"  %>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarColor02">
+            <ul class="navbar-nav mr-auto">
+              <li class="nav-item active">
+              </li>
+              <li class="nav-item">
+              <a class="btn btn-outline-light my-2 my-sm-0" style="color:white;" type="submit" href="/home/inicio">PERFIL</a>
+              </li>
+              <li class="nav-item active">
+              <a class="btn btn-outline-light my-2 my-sm-0" style="color:white;"type="submit"href="estacionamientos">ESTACIONAMIENTOS</a>
+              </li>
+              <li class="nav-item ">
+              <a class="btn btn-outline-light my-2 my-sm-0" style="color:white;" type="submit"href="servicios">SERVICIOS</a>
+              </li>
+              <li class="nav-item">
+              <a class="btn btn-outline-light my-2 my-sm-0" style="color:white;" type="submit"href="alquileres">ALQUILERES</a>
+              </li>
+              <li class="nav-item">
+              <a class="btn btn-outline-light my-2 my-sm-0" style="color:white;" type="submit"href="inicio">SALIR</a>
+              </li>
+            </ul>
+          </div>
+              <button class="btn btn-outline-light my-2 my-sm-0" type="submit">LOG OUT</button>
+              <button class="btn btn-outline-light my-2 my-sm-0" type="submit">ESTADO</button>
+      </nav>
+
+      <div class="card mb-3 card-publicidad container-publicidad">
+          <div class="col-md-9 mb-4 mt-4">
+            <%= form_for :listar_estacionamientos, :url => {:controller => "listar", :action => "estacionamientos_get"}, :method => :get, :html => { :class => "form-horizontal validation " , :id => "form_estacionamiento"}  do |f| %>
+            <div class="form-group">
+            <div class="col-md-9  col-sm-12">
+                <div class="col-md-12 mb-4">
+                      <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Buscar por nombre " name="nombre">
+                <input type="submit" value="Buscar"/>
+                    </div>
+                  </div>
+                </div>
+            </div>
+        </div>
+      </div>
+        <% end %>
+        <table class="table table-striped table-bordered table-hover dataTables-example" id="tablaUsuarios">
+          <thead>
+            <tr>
+          <th>id</th>
+          <th>nombre</th>
+          <th>direccion</th>
+          <th>ubicacion</th>
+      </tr>
+  </thead>
+  <tbody>
+      <% if @estacionamientos != nil && @estacionamientos != ""
+
+          @estacionamientos.each do |p| %>
+      <tr class="gradeU">
+        <td><%=p.id %></td>
+        <td><%=p.nombre %></td>
+        <td><%=p.direccion %></td>
+        <td><%=p.ubicacion %></td>
+      </tr>
+      <% end end %>
+  </tbody>
+</table>

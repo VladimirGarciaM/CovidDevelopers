@@ -1,0 +1,233 @@
+<!DOCTYPE html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Jekyll v4.0.1">
+    <title>Album example · Bootstrap</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.5/examples/album/">
+
+    <!-- Bootstrap core CSS -->
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <style>
+
+    .espacio {
+        margin-right: 5%;
+    }
+
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+
+      .colortext{
+        color:white;
+      }
+    </style>
+    <!-- Custom styles for this template -->
+
+    <header>
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top bg-secondary">
+      <img class="img-logo" src="<%= image_path('logo.png') %>"  alt="Logo de PostresFacilito" >
+    <p class="navbar-brand" href="#">ARKING</p>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <li class="nav-item">
+          <a class="btn colortext my-2 my-sm-0 " style="color:white;" type="submit" href="#">QUIENES SOMOS</a>
+          </li>
+          <li class="nav-item active">
+          <a class="btn colortext my-2 my-sm-0" style="color:white;" type="submit" href="/listar/estacionamientos">ESTACIONAMIENTOS</a>
+          </li>
+          <li class="nav-item ">
+          <a class="btn colortext my-2 my-sm-0" style="color:white;" type="submit"href="/listar/servicios">SERVICIOS</a>
+          </li>
+          <li class="nav-item">
+          <a class="btn colortext my-2 my-sm-0" style="color:white;" type="submit"href="/listar/alquileres">ALQUILERES</a>
+          </li>
+
+      </ul>
+
+    </div>
+    <a class="btn btn-primary active my-2 my-sm-0" type="submit" href="/sessions/new">LOGIN</a>
+    <a class="btn btn-secondary active my-2 my-sm-0" type="submit"href="/users/new">CREATE ACCOUNT</a>
+  </nav>
+</header>
+
+<div class="row" style="border: solid 0p; padding:10px;width:100%;">
+  <div class="col-5">
+  <h2>Alquiler de estacionamiento</h2>
+  </div>
+</div>
+
+
+<div class="container light" >
+<div class="row" style="border: solid 1px #ccc;">
+<table class="table " style="border: solid 0px;">
+
+
+
+<%= form_for :alquileres, :url => {:controller => "listar", :action => "alquileres_get"}, :method => :get, :html => { :class => "form-horizontal" , :id => "form_producto"} do |f| %>
+
+ <div class="form-group">
+
+ <input type="text"  class="col-sm-3" required= ""  pattern= "^[a-zA-Z*\s]{0,15}" class="form-control" placeholder="Ingresa el nombre de tu estacionamiento" name="txt_nombre_producto">
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
+
+Rango de fechas:
+<input type="text"  id="rangepickerStart">
+<input type="text" id="rangepickerEnd">
+<input type="submit" id="BUSCAR">
+
+
+<%= hidden_field_tag :start %>
+<%= hidden_field_tag :end %>
+
+<script>
+  $("#rangepickerStart").daterangepicker({
+     singleDatePicker: true,
+       showDropdowns: true,
+         minYear: 2010,
+       maxYear: parseInt(moment().format('YYYY'),10)
+  }, function(start, end, label) {
+  $("#start").val(start.format('YYYY-MM-DD'));
+  $("form").submit( );
+  });
+
+  $("#rangepickerEnd").daterangepicker({
+     singleDatePicker: true,
+       showDropdowns: true,
+         minYear: 2010,
+       maxYear: parseInt(moment().format('YYYY'),10)
+  }, function(start, end, label) {
+  $("#end").val(end.format('YYYY-MM-DD'));
+  $("form").submit( );
+  });
+
+
+</script>
+
+
+ <% end %>
+ <table class="table table-striped table-bordered table-hover dataTables-example" id="tablaUsuarios">
+ <thead>
+ <tr>
+ <th>Distrito</th>
+ <th>Ubicación</th>
+ <th>Nombre </th>
+ <th>Total </th>
+ <th>Servicios adicionales </th>
+ <th>Fecha </th>
+ </tr>
+ </thead>
+ <tbody>
+
+ <%= @resultado %>
+ <% if @productos != nil && @productos != ""
+
+ @productos.each do |p| %>
+ <tr class="gradeU">
+
+
+ <td><%=p.distrito %></td>
+ <td><%=p.ubicacion %></td>
+ <td><%=p.nombre %></td>
+ <td><%=p.total %></td>
+ <td><%=p.adicional %></td>
+ <td><%=p.fecha %></td>
+ </tr>
+ <% end end %>
+ </tbody>
+</table>
+
+</table>
+</div>
+</div>
+
+
+<br><br>
+<div class=" " style="width:100%; float:both; margin:auto;" align="center">
+  <ul class="pagination" style="float:both; margin: auto; width: 250px; ">
+    <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+    <li class="page-item"><a class="page-link" href="#">1</a></li>
+    <li class="page-item"><a class="page-link" href="#">2</a></li>
+    <li class="page-item"><a class="page-link" href="#">3</a></li>
+    <li class="page-item"><a class="page-link" href="#">Next</a></li>
+  </ul>
+<br><br>
+
+
+
+<!-- Footer -->
+<footer class="page-footer font-small blue pt-4 bg-secondary">
+<!-- Footer Links -->
+<div class="container-fluid text-center text-md-left">
+<!-- Grid row -->
+<div class="row">
+<!-- Grid column -->
+<div class="col-md-6 mt-md-0 mt-3">
+<!-- Content -->
+<h5 class="text-uppercase colortext" >Sistema de Estacionamientos</h5>
+<p class="colortext">Desarrollo de sistema de reservas de estacionamientos y control de publicidad.</p>
+</div>
+<!-- Grid column -->
+<hr class="clearfix w-100 d-md-none pb-3">
+<!-- Grid column -->
+<div class="col-md-3 mb-md-0 mb-3">
+<!-- Links -->
+  <h5 class="text-uppercase colortext">Sistema</h5>
+  <ul class="list-unstyled">
+  <li> <a class="colortext" href="#!">Perfil</a> </li>
+  <li> <a class="colortext" href="#!">Estacionamientos</a> </li>
+  <li> <a class="colortext" href="#!">Alquileres</a> </li>
+  </ul>
+
+</div>
+<!-- Grid column -->
+
+<div class="col-md-3 mb-md-0 mb-3">
+
+<!-- Links -->
+<h5 class="text-uppercase colortext">Control</h5>
+<ul class="list-unstyled">
+<li><a class="colortext" href="#!">Publicidad</a></li>
+<li><a class="colortext" href="#!">Publicaciones</a></li>
+</ul>
+
+</div>
+<!-- Grid column -->
+</div>
+<!-- Grid row -->
+</div>
+<!-- Footer Links -->
+<!-- Copyright -->
+<div class="footer-copyright text-center py-3 colortext">© 2020 Copyright:
+<a clas="colortext" href="https://mdbootstrap.com/"> sistema dereservadeestacionamientos.com</a>
+</div>
+<!-- Copyright -->
+</footer>
+<!-- Footer -->

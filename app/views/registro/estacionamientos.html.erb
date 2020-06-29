@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <%= stylesheet_link_tag "style"%>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flexboxgrid/6.3.1/flexboxgrid.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.5/examples/album/">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+    <title>Registrar Estacionamientos</title>
+  </head>
+    <body>
+        <header>
+        <nav class="navbar navbar-expand-lg navbar-dark fixed-top bg-secondary">
+            <img class="img-logo" src="<%= image_path('logo.png') %>"  alt="Logo de PostresFacilito" >
+                  <%= link_to "ARKING", inicio_path, class:"navbar-brand title"  %>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarColor02">
+            <ul class="navbar-nav mr-auto">
+              <li class="nav-item active">
+              </li>
+              <li class="nav-item">
+              <a class="btn btn-outline-light my-2 my-sm-0" style="color:white;" type="submit" href="/home/inicio">PERFIL</a>
+              </li>
+              <li class="nav-item active">
+              <a class="btn btn-outline-light my-2 my-sm-0" style="color:white;"type="submit"href="estacionamientos">ESTACIONAMIENTOS</a>
+              </li>
+              <li class="nav-item ">
+              <a class="btn btn-outline-light my-2 my-sm-0" style="color:white;" type="submit"href="servicios">SERVICIOS</a>
+              </li>
+              <li class="nav-item">
+              <a class="btn btn-outline-light my-2 my-sm-0" style="color:white;" type="submit"href="alquileres">ALQUILERES</a>
+              </li>
+              <li class="nav-item">
+              <a class="btn btn-outline-light my-2 my-sm-0" style="color:white;" type="submit"href="inicio">SALIR</a>
+              </li>
+            </ul>
+          </div>
+              <button class="btn btn-outline-light my-2 my-sm-0" type="submit">LOG OUT</button>
+              <button class="btn btn-outline-light my-2 my-sm-0" type="submit">ESTADO</button>
+      </nav>
+
+      </header>
+        <div class="container-fluid container-publicidad">
+      <h3 class="mb-0 title">Registro de Estacionamientos</h3>
+      <div class="">
+        <p></p>
+      </div>
+
+                 <!-- Breadcrumbs-->
+                 <div class="card mb-3 card-publicidad container-publicidad" >
+                    <div class="col-md-9 mb-4 mt-4">
+                       <br>
+                    <%= form_for :estacionamientos, :url => {:controller => "registro", :action => "estacionamientos_post"}, :method => :post, :html => { :class => "form-horizontal validation " , :id => "form_estacionamiento"}  do |f| %>
+                            <div class="row">
+                             <div class="col-md-9  col-sm-12">
+                                 <div class="form-group">
+                                      <div class="row">
+                                      <div class="col-md-12 mb-4">
+                                        <div class="form-group">
+                                          <label class="control-label col-sm-2" for="Nombre">Nombre:</label>
+                                          <div class="col-sm-8">
+                                            <input type="text" class="form-control text" pattern="^[a-zA-Z*\s]{0,20}" id="Nombre" placeholder="Nombre de estacionamiento" name="nombre" required>
+                                            <div class="invalid-feedback">
+                                              Valid first name is required.
+                                            </div>
+
+                                            </div>
+                                            </div>
+
+                                            <div class="form-group">
+                                              <label class="control-label col-sm-2" for="Direccion">Dirección:</label>
+                                              <div class="col-sm-8">
+                                                <input type="text" class="form-control text" pattern="^[a-zA-Z*|0-9*|\s*]{0,40}" id="direccion" placeholder="Dirección" name="direccion" required>
+                                                <div class="invalid-feedback">
+                                                  Valid first name is required.
+                                                </div>
+                                                </div>
+                                                </div>
+                                                <div class="form-group">
+                                                <label class="control-label col-sm-2" for="sel1">Distrito:</label>
+                                                <div class="col-sm-8">
+                                                <select class="form-control" id="sel1" placeholder="Costo x hora"name="distrito"required>
+                                                            <option>Ate</option>
+                                                            <option>Cercado de Lima</option>
+                                                            <option>Molina</option>
+                                                            <option>Miraflores</option>
+                                                            <option>Lurigancho</option>
+                                                            <option>San Isidro</option>
+                                                            <option>San Borja</option>
+                                                            <option>Pueblo Libre</option>
+                                                          </select>
+                                                <div class="invalid-feedback">
+                                                Valid first name is required.
+                                                </div>
+                                                </div>
+                                                </div>
+                                                  <div class="form-group">
+                                                      <label class="control-label col-sm-2" for="Telefono">Telefono:</label>
+                                                      <div class="col-sm-8">
+                                                        <input type="text" class="form-control"pattern="^[-+]?\d+$" id="telefono" placeholder="Número de Télefono"  onkeypress='validate(event)' name="telefono"required>
+                                                        <div class="invalid-feedback">
+                                                          Valid first name is required.
+                                                        </div>
+                                                        </div>
+                                                        </div>
+                                                  <div class="form-group">
+                                                  <label class="control-label col-sm-2" for="sel1">Costo x horas:</label>
+                                                  <div class="col-sm-8">
+                                                  <select class="form-control" id="sel1" placeholder="Costo x hora"name="costo"required>
+                                                              <option>S/. 10</option>
+                                                              <option>S/. 20</option>
+                                                              <option>S/. 30</option>
+                                                              <option>S/. 40</option>
+                                                              <option>S/. 50</option>
+                                                              <option>S/. 60</option>
+                                                              <option>S/. 70</option>
+                                                              <option>S/. 80</option>
+                                                            </select>
+                                                  <div class="invalid-feedback">
+                                                  Valid first name is required.
+                                                  </div>
+                                                  </div>
+                                                  </div>
+                                                  <div class="form-group">
+                                                  <label class="control-label col-sm-2" for="sel1">Dimensiones</label>
+                                                  <div class="col-sm-8">
+                                                  <select class="form-control" id="sel1" placeholder="Dimensiones "name="dimensiones"required>
+                                                              <option>30x30 m</option>
+                                                              <option>40x40 m</option>
+                                                              <option>50x50 m</option>
+                                                              <option>40x40 m</option>
+                                                              <option>50x50y</option>
+                                                            </select>
+                                                  <div class="invalid-feedback">
+                                                  Valid first name is required.
+                                                  </div>
+                                                  </div>
+                                                  </div>
+                                                        <div class="form-group">
+                                                        <label class="control-label col-sm-2" for="sel1">Tipos:</label>
+                                                        <div class="col-sm-8">
+                                                        <select class="form-control" id="sel1", name="tipo">
+                                                                    <option>Interior</option>
+                                                                    <option>Exterior</option>
+                                                                    <option>Aire Libre</option>
+                                                                  </select>
+                                                        <div class="invalid-feedback">
+                                                        Valid first name is required.
+                                                        </div>
+                                                        </div>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label class="control-label col-sm-2" for="ubicacion">Ubicación:</label>
+                                                            <div class="col-sm-8">
+                                                              <input type="text" class="form-control" id="ubicacion" placeholder="Ubicación" name="ubicacion"required>
+                                                              <div class="invalid-feedback">
+                                                                Valid first name is required.
+                                                              </div>
+                                                              </div>
+                                                              </div>
+                                                        <div class="form-group">
+                                                                  <label class="control-label col-sm-2" for="archivo">Archivo:</label>
+                                                                  <div class="col-sm-8">
+                                                                  <input type="file" class="form-control-file border" required name="archivo">
+                                                                    <div class="invalid-feedback">
+                                                                      Valid first name is required.
+                                                                    </div>
+                                                                    </div>
+                                                                    </div>
+
+                                                              <h3>My Google Maps Demo</h3>
+                                                            <!--The div element for the map -->
+
+                                                                  <div id="map"></div>
+                                                                  <script>
+                                                                    // Initialize and add the map
+                                                                    function initMap() {
+                                                                      // The location of Uluru
+                                                                      var uluru = {lat: -25.344, lng: 131.036};
+                                                                      // The map, centered at Uluru
+                                                                      var map = new google.maps.Map(
+                                                                      document.getElementById('map'), {zoom: 4, center: uluru});
+                                                                      // The marker, positioned at Uluru
+                                                                      var marker = new google.maps.Marker({position: uluru, map: map});
+                                                                      }
+                                                                      </script>
+                                                                      <!--Load the API from the specified URL
+                                                                      * The async attribute allows the browser to render the page while the API loads
+                                                                      * The key parameter will contain your own API key (which is not needed for this tutorial)
+                                                                      * The callback parameter executes the initMap() function
+                                                                    -->
+                                                                    <script async defer
+                                                                    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDv_pMTtA9XuSLAG7RaDVFEYmOn_FkDRpo&callback=initMap">
+                                                                    </script>
+                                                      </div>
+                                                    </div>
+                                                  </div>
+                                              </div>
+                                            </div>
+                                          </div
+                                          </div>
+                                          <div class=" card-footer">
+                                           <div class="float-right">
+                                            <input class="btn btn-secondary btn-lg " type="reset" value="Cancelar">
+                                             <input class="btn btn-primary btn-lg " type="submit" onclick="myFunction()" value="Guardar Cambios">
+                                            </div>
+                                                </div>
+
+                                              <% end %>
+
+                                               <% if @nombre %>
+
+                                               <h4>
+
+                                                 El nombre de estacionamiento es: <%=@nombre%>
+                                                 La dirección es: <%@direccion%>
+                                                 El distrito es: <%@distrito%>
+                                                 El Telefono es: <%@telefono%>
+                                                 El costo es: <%@costo%>
+                                                 Las dimensiones es: <%@dimensiones%>
+                                                 El tipo es: <%@tipo%>
+                                                 la ubicación es: <%@ubicacion%><br/>
+
+
+                                               </h4>
+
+                                              <% else %>
+
+                                               <% end %>
+
+                           </body>
+                           </html>

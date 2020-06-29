@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.5/examples/album/">
+    <title>Servicios</title>
+    <!-- Custom fonts for this template-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
+      <style>
+
+      .espacio {
+          margin-right: 5%;
+      }
+
+        .bd-placeholder-img {
+          font-size: 1.125rem;
+          text-anchor: middle;
+          -webkit-user-select: none;
+          -moz-user-select: none;
+          -ms-user-select: none;
+          user-select: none;
+        }
+
+        @media (min-width: 768px) {
+          .bd-placeholder-img-lg {
+            font-size: 3.5rem;
+          }
+        }
+
+        .colortext{
+          color:white;
+        }
+
+
+        .modal-backdrop.in {
+      opacity: 0.7;
+  }
+
+      </style>
+      <!-- Custom styles for this template -->
+      <link href="album.css" rel="stylesheet">
+
+
+  </head>
+
+ <body style="background-color:white;">
+
+   <header>
+   <nav class="navbar navbar-expand-lg navbar-dark bg-secondary">
+       <img class="img-logo" src="<%= image_path('logo.png') %>"  alt="Logo de PostresFacilito" >
+     <a class="navbar-brand title" href="#">ARKING</a>
+     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
+       <span class="navbar-toggler-icon"></span>
+     </button>
+     <div class="collapse navbar-collapse" id="navbarColor02">
+       <ul class="navbar-nav mr-auto">
+         <li class="nav-item active">
+         </li>
+         <li class="nav-item">
+         <a class="btn btn-outline-light my-2 my-sm-0" type="submit" href="#">PERFIL</a>
+         </li>
+         <li class="nav-item active">
+         <a class="btn btn-outline-light my-2 my-sm-0" type="submit"href="estacionamientos">ESTACIONAMIENTOS</a>
+         </li>
+         <li class="nav-item ">
+         <a class="btn btn-outline-light my-2 my-sm-0" type="submit"href="servicios">SERVICIOS</a>
+         </li>
+         <li class="nav-item">
+         <a class="btn btn-outline-light my-2 my-sm-0" type="submit"href="alquileres">ALQUILERES</a>
+         </li>
+         <li class="nav-item">
+         <a class="btn btn-outline-light my-2 my-sm-0" type="submit"href="inicio">SALIR</a>
+         </li>
+       </ul>
+     </div>
+         <button class="btn btn-outline-light my-2 my-sm-0" type="submit">LOG OUT</button>
+         <button class="btn btn-outline-light my-2 my-sm-0" type="submit">ESTADO</button>
+  </nav>
+
+  </header>
+
+
+
+       <div id="wrapper">
+         <!-- Sidebar -->
+         <ul class="sidebar navbar-nav" id="menu">
+         </ul>
+          <div id="content-wrapper">
+            <div class="container-fluid container-publicidad">
+
+
+     <nav class="navbar navbar-light bg-light">
+         <span class="navbar-brand mb-0 h1">Servicios Adicionales</span>
+     </nav>
+
+
+
+              <div class="card mb-3 card-publicidad container-publicidad" >
+                  <div class="card-header">
+                     <div class=" row">
+
+                        <div class="col-md-2 col-sm-12">
+                           Tipo servicio
+                        </div>
+
+                        <div class="col-md-4 col-sm-12">
+                           <select id="tipo" class="custom-select">
+                              <option selected>Seleccionar</option>
+                           </select>
+                        </div>
+
+                        <div class="col-md-2 col-sm-12">
+                           <button class="btn btn-primary ">Buscar</button>
+                        </div>
+
+                        <button type="button" class="btn btn-add" data-toggle="modal" data-target="#ModalServicio">
+                           <div class="input-group-addon"  >
+                              <i class="fa fa-plus fa-2x"></i>
+                           </div>
+                        </button>
+
+                     </div>
+                  </div>
+
+
+
+                  <div class="card-body">
+                     <div class="table-responsive">
+                        <table class="table table-striped" id="dataTable">
+                           <thead class="thead" style="display:none;" >
+                              <tr >
+                                 <th> </th>
+                                 <th class="th-crud"></th>
+                              </tr>
+                            </thead>
+                           <tfoot style="display:none;" >
+                              <tr>
+                                 <th> </th>
+                                 <th class="th-crud"></th>
+                              </tr>
+                           </tfoot>
+
+
+
+
+
+                           <tbody>
+                              <tr>
+                                 <td>
+                                    <div class="container">
+
+                                                <div class="row">
+                                                   <div class="container col-md-4">
+                                                      <div class="row">
+                                                         <div class="col-sm-6 col-md-6">Tipo servivio:</div>
+                                                         <div class="col-sm-6 col-md-6">Limpieza </div>
+                                                      </div>
+                                                   </div>
+                                                   <div class="container col-md-4">
+                                                      <div class="row">
+                                                         <div class="col-sm-6 col-md-4">Tarífa:</div>
+                                                         <div class="col-sm-6 col-md-8">S/.20.00 </div>
+                                                      </div>
+                                                   </div>
+                                                   <div class="container col-md-4">
+                                                      <div class="row">
+                                                         <div class="col-sm-6 col-md-7">Estacionamiento:</div>
+                                                         <div class="col-sm-6 col-md-5">Surco </div>
+                                                      </div>
+                                                   </div>
+                                                </div>
+
+                                                <div class="row">
+                                                   <div class="container">
+                                                      <div class="row">
+                                                         <div class="col-sm-12 col-md-12">Descripción:</div>
+                                                         <div class="col-sm-12 col-md-12">Encerado y Lavado </div>
+                                                      </div>
+                                                   </div>
+                                                </div>
+                                        </div>
+                                <!-- </div>  -->
+                                 </td>
+
+
+                                 <td>
+                                    <div>
+                                           <button type="button" class="btn btn-edit" data-toggle="modal" data-target="#ModalServicio">
+                                                <div class="input-group-addon">
+                                                   <i class="fa fa-pencil"></i>
+                                                </div>
+                                           </button>
+                                           <button type="button" class="btn btn-delete" data-toggle="modal" data-target="   #ModalServicioEliminar">
+                                                <div class="input-group-addon">
+                                                   <i class="fa fa-trash"></i>
+                                                </div>
+                                           </button>
+                                    </div>
+                                 </td>
+                              </tr>
+
+
+
+
+
+
+                              <tr>
+                                 <td>
+                                    <div class="container">
+
+                                                <div class="row">
+                                                   <div class="container col-md-4">
+                                                      <div class="row">
+                                                         <div class="col-sm-6 col-md-6">Tipo servivio:</div>
+                                                         <div class="col-sm-6 col-md-6">Lavado </div>
+                                                      </div>
+                                                   </div>
+                                                   <div class="container col-md-4">
+                                                      <div class="row">
+                                                         <div class="col-sm-6 col-md-4">Tarífa:</div>
+                                                         <div class="col-sm-6 col-md-8">S/.20.00 </div>
+                                                      </div>
+                                                   </div>
+                                                   <div class="container col-md-4">
+                                                      <div class="row">
+                                                         <div class="col-sm-6 col-md-7">Estacionamiento:</div>
+                                                         <div class="col-sm-6 col-md-5">Surco </div>
+                                                      </div>
+                                                   </div>
+                                                </div>
+
+                                                <div class="row">
+                                                   <div class="container">
+                                                      <div class="row">
+                                                         <div class="col-sm-12 col-md-12">Descripción:</div>
+                                                         <div class="col-sm-12 col-md-12">Encerado y Lavado </div>
+                                                      </div>
+                                                   </div>
+                                                </div>
+                                           </div>
+                                   <!--  </div>-->
+                                 </td>
+
+
+                                 <td>
+                                    <div>
+                                       <button type="button" class="btn btn-edit" data-toggle="modal" data-target="#ModalServicio">
+                                                <div class="input-group-addon">
+                                                   <i class="fa fa-pencil"></i>
+                                                </div>
+                                             </button>
+                                             <button type="button" class="btn btn-delete" data-toggle="modal" data-target="#ModalServicioEliminar">
+                                                <div class="input-group-addon">
+                                                   <i class="fa fa-trash"></i>
+                                                </div>
+                                             </button>
+                                    </div>
+                                 </td>
+                              </tr>
+
+
+
+
+
+
+
+                              <tr>
+                                 <td>
+                                    <div class="container">
+                                                <div class="row">
+                                                   <div class="container col-md-4">
+                                                      <div class="row">
+                                                         <div class="col-sm-6 col-md-6">Tipo servivio:</div>
+                                                         <div class="col-sm-6 col-md-6">Lavado </div>
+                                                      </div>
+                                                   </div>
+                                                   <div class="container col-md-4">
+                                                      <div class="row">
+                                                         <div class="col-sm-6 col-md-4">Tarífa:</div>
+                                                         <div class="col-sm-6 col-md-8">S/.20.00 </div>
+                                                      </div>
+                                                   </div>
+                                                   <div class="container col-md-4">
+                                                      <div class="row">
+                                                         <div class="col-sm-6 col-md-7">Estacionamiento:</div>
+                                                         <div class="col-sm-6 col-md-5">Surco </div>
+                                                      </div>
+                                                   </div>
+                                                </div>
+                                                <div class="row">
+                                                   <div class="container">
+                                                      <div class="row">
+                                                         <div class="col-sm-12 col-md-12">Descripción:</div>
+                                                         <div class="col-sm-12 col-md-12">Encerado y Lavado </div>
+                                                      </div>
+                                                   </div>
+                                                </div>
+                                             </div>
+                                <!--     </div> -->
+                                 </td>
+
+
+                                 <td>
+                                    <div>
+                                       <button type="button" class="btn btn-edit" data-toggle="modal" data-target="#ModalServicio">
+                                                <div class="input-group-addon">
+                                                   <i class="fa fa-pencil"></i>
+                                                </div>
+                                             </button>
+                                             <button type="button" class="btn btn-delete" data-toggle="modal" data-target="#ModalServicioEliminar">
+                                                <div class="input-group-addon">
+                                                   <i class="fa fa-trash"></i>
+                                                </div>
+                                             </button>
+                                    </div>
+                                 </td>
+                              </tr>
+
+
+                       </tbody>
+                     </table>
+
+
+
+                    </div>
+                   </div>
+                  </div>
+                </div>
+               </div>
+              </div>
+   <!-- </div>
+ </div>  -->
+
+
+
+
+
+
+
+
+
+
+
+
+      <!-- Servicios adicionales Modal-->
+      <div class="modal fade bd-example-modal-lg" id="ModalServicio" tabindex="-1" role="dialog"
+         aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+         <div class="modal-dialog " role="document">
+            <div class="modal-content">
+               <div class="modal-header">
+                  <h5 class="modal-title" id="mapModalLongTitle">Administración servicio</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                  </button>
+               </div>
+               <div class="modal-body">
+                  <div class="container">
+                     <div class="row">
+                        <label > Tipo de servicio: </label>
+                        <input class="col-sm-3 col-md-4 form-control" type="text" name="" >
+                        <label class="col-sm-3 col-md-2">Tarífa</label>
+                        <input class="col-sm-3 col-md-2 form-control" type="text" name="" >
+                     </div>
+                     <div class="row">
+                        <label >Descripción</label>
+                     </div>
+                     <div class="row">
+                        <textarea class="form-control" rows="2" id="comment"></textarea>
+                     </div>
+                  </div>
+                  <hr />
+                  <div class="container">
+                     <div class="row">
+                        <input type="text" class="form-control" placeholder="Buscar estacionamiento">
+                     </div>
+                     <br>
+                     <div class="row table-table-scroll-y">
+                        <table class="table " id="dataTable"  >
+                           <thead class="thead" >
+                              <tr>
+                                 <th style=" padding: 0px;">Distrito</th>
+                                 <th style=" padding: 0px;">Tipo</th>
+                                 <th style=" padding: 0px;">Dirección</th>
+                                 <th style=" padding: 0px;">Seleccionar</th>
+                              </tr>
+                           </thead>
+                           <tbody>
+                              <tr>
+                                 <td style=" padding: 0px;">La Molina</td>
+                                 <td style=" padding: 0px;">Interior</td>
+                                 <td style=" padding: 0px;">Av La Molina # 12451</td>
+                                 <td style=" padding: 0px;">
+                                    <div class="text-center"><input class="form-check-input" type="radio" name="seleccionarServicio" id="seleccionarServicio" value="option1"></div>
+                                 </td>
+                              </tr>
+                              <tr>
+                                 <td style=" padding: 0px;">La Molina</td>
+                                 <td style=" padding: 0px;">Interior</td>
+                                 <td style=" padding: 0px;">Av La Molina # 12451</td>
+                                 <td style=" padding: 0px;">
+                                    <div class="text-center"><input class="form-check-input" type="radio" name="seleccionarServicio" id="seleccionarServicio" value="option1"></div>
+                                 </td>
+                              </tr>
+                              <tr>
+                                 <td style=" padding: 0px;">La Molina</td>
+                                 <td style=" padding: 0px;">Interior</td>
+                                 <td style=" padding: 0px;">Av La Molina # 12451</td>
+                                 <td style=" padding: 0px;">
+                                    <div class="text-center"><input class="form-check-input" type="radio" name="seleccionarServicio" id="seleccionarServicio" value="option1"></div>
+                                 </td>
+                              </tr>
+                              <tr>
+                                 <td style=" padding: 0px;">La Molina</td>
+                                 <td style=" padding: 0px;">Interior</td>
+                                 <td style=" padding: 0px;">Av La Molina # 12451</td>
+                                 <td style=" padding: 0px;">
+                                    <div class="text-center"><input class="form-check-input" type="radio" name="seleccionarServicio" id="seleccionarServicio" value="option1"></div>
+                                 </td>
+                              </tr>
+                              <tr>
+                                 <td style=" padding: 0px;">La Molina</td>
+                                 <td style=" padding: 0px;">Interior</td>
+                                 <td style=" padding: 0px;">Av La Molina # 12451</td>
+                                 <td style=" padding: 0px;">
+                                    <div class="text-center"><input class="form-check-input" type="radio" name="seleccionarServicio" id="seleccionarServicio" value="option1"></div>
+                                 </td>
+                              </tr>
+                           </tbody>
+                        </table>
+                     </div>
+                  </div>
+               </div>
+               <div class="modal-footer modal-footer-crud">
+                     <button type="button" class="btn btn-cancel">
+                        <div class="input-group-addon ">
+                           <i class="fa fa-times" data-dismiss="modal"> Cancelar</i>
+                        </div>
+                     </button>
+                  <button type="button" class="btn btn-save ">
+                     <div class="input-group-addon ">
+                        <i class="fa fa-thumbs-up" data-dismiss="modal"> Guardar</i>
+                     </div>
+                  </button>
+               </div>
+            </div>
+         </div>
+      </div>
+
+
+
+
+
+      <!-- Bootstrap core JavaScript-->
+      <script src="vendor/jquery/jquery.min.js"></script>
+      <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+      <!-- Core plugin JavaScript-->
+      <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+      <!-- Page level plugin JavaScript-->
+      <script src="vendor/datatables/jquery.dataTables.js"></script>
+      <script src="vendor/datatables/dataTables.bootstrap4.js"></script>
+      <!-- Custom scripts for all pages-->
+      <script src="js/sb-admin.min.js"></script>
+      <!-- Demo scripts for this page-->
+      <script src="js/demo/datatables-demo.js"></script>
+      <script src="partialview/_menu.js"></script>
+      <script src="partialview/_navbar.js"></script>
+      <script src="partialview/_modallogout.js"></script>
+      <script type="text/javascript">
+         $(document).ready(function() {
+               $('.navbar-nav').find('li.active').removeClass('active');
+               $('#duenio_servicio').addClass('active');
+         });
+      </script>
+
+
+
+
+
+
+
+
+
+
+
+
+                <!-- Footer -->
+  <footer class="page-footer font-small blue pt-4 bg-secondary">
+
+          <!-- Footer Links -->
+          <div class="container-fluid text-center text-md-left">
+
+            <!-- Grid row -->
+            <div class="row">
+
+              <!-- Grid column -->
+              <div class="col-md-6 mt-md-0 mt-3">
+
+                <!-- Content -->
+                <h5 class="text-uppercase colortext" >Sistema de Estacionamientos</h5>
+                <p class="colortext">Desarrollo de sistema de reservas de estacionamientos y control de publicidad.</p>
+
+              </div>
+              <!-- Grid column -->
+
+              <hr class="clearfix w-100 d-md-none pb-3">
+
+              <!-- Grid column -->
+              <div class="col-md-3 mb-md-0 mb-3">
+
+                <!-- Links -->
+                <h5 class="text-uppercase colortext">Sistema</h5>
+
+                <ul class="list-unstyled">
+                  <li>
+                    <a class="colortext" href="#!">Perfil</a>
+                  </li>
+                  <li>
+                    <a class="colortext" href="#!">Estacionamientos</a>
+                  </li>
+                  <li>
+                  <a class="colortext" href="#!">Alquileres</a>
+                </li>
+
+
+                </ul>
+
+              </div>
+              <!-- Grid column -->
+
+              <!-- Grid column -->
+              <div class="col-md-3 mb-md-0 mb-3">
+
+                <!-- Links -->
+                <h5 class="text-uppercase colortext">Control</h5>
+
+                <ul class="list-unstyled">
+                <li>
+                <a class="colortext" href="#!">Publicidad</a>
+              </li>
+              <li>
+                <a class="colortext" href="#!">Publicaciones</a>
+              </li>
+                </ul>
+
+              </div>
+              <!-- Grid column -->
+
+            </div>
+            <!-- Grid row -->
+
+          </div>
+          <!-- Footer Links -->
+
+          <!-- Copyright -->
+          <div class="footer-copyright text-center py-3 colortext">© 2020 Copyright:
+            <a clas="colortext" href="https://mdbootstrap.com/"> sistema dereservadeestacionamientos.com</a>
+          </div>
+          <!-- Copyright -->
+
+        </footer>
+        <!-- Footer -->
+
+
+
+  </body>
+</html>

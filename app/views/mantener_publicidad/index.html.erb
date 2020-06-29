@@ -1,0 +1,539 @@
+<html lang="en"><head>
+      <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Jekyll v4.0.1">
+    <title>Album example · Bootstrap</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.5/examples/album/">
+
+
+
+
+
+
+
+
+    <!-- Bootstrap core CSS -->
+
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+
+
+
+    <style>
+
+
+    .espacio {
+        margin-right: 5%;
+    }
+
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+
+      .colortext{
+        color:white;
+      }
+
+
+      .modal-backdrop.in {
+    opacity: 0.7;
+}
+
+
+    </style>
+    <!-- Custom styles for this template -->
+    <link href="album.css" rel="stylesheet">
+  </head>
+
+  <body style="background-color:white;">
+
+
+        <header>
+
+
+                <nav class="navbar navbar-expand-lg navbar-dark bg-secondary">
+                  <a class="navbar-brand" href="#">SISTEMA ESTACIONAMIENTOS</a>
+                  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                  </button>
+
+                  <div class="collapse navbar-collapse" id="navbarColor02">
+                    <ul class="navbar-nav mr-auto">
+                      <li class="nav-item active">
+
+                      </li>
+                      <li class="nav-item">
+                      <button class="btn btn-outline-light my-2 my-sm-0"  style="border:solid 0px;" type="submit">PERFIL</button>
+                      </li>
+                      <li class="nav-item">
+                      <button class="btn btn-outline-light my-2 my-sm-0"  style="border:solid 0px;" type="submit">ESTACIONAMIENTOS</button>
+                      </li>
+                      <li class="nav-item">
+                      <button class="btn btn-outline-light my-2 my-sm-0"   style="border:solid 0px;" type="submit">SERVICIOS</button>
+                      </li>
+                      <li class="nav-item">
+                      <button class="btn btn-outline-light my-2 my-sm-0"  style="border:solid 0px;" type="submit">ALQUILERES</button>
+                      </li>
+                      <li class="nav-item">
+                          <button class="btn btn-outline-light my-2 my-sm-0"  style="border:solid 0px;" type="submit">SALIR</button>
+                          </li>
+                    </ul>
+
+
+
+
+
+                  </div>
+
+
+                  <button class="btn btn-outline-light my-2 my-sm-0"   style="border:solid 0px;" type="submit">Iniciar Sesión</button>
+                  <button class="btn btn-outline-light my-2 my-sm-0"   style="border:solid 0px;" type="submit">Registrate</button>
+
+
+
+              </nav>
+
+
+
+            </header>
+
+
+
+
+
+
+        <div class="container light" >
+                <div class="row" style="border: solid 1px #ccc;">
+                  <div class="col-sm-2" style="border-right: solid 1px #ccc; padding:0px; ">
+                        <div class="list-group">
+
+
+                                <button class="btn btn-lg btn-light col-xs-12 active" style="border-radius:0px;   height:60px;  padding-top:18px; padding-bottom:20px;">
+
+                                     <span  style="float:left;  "  class="material-icons pull-left"> home </span>
+                                     <span style=" ">Inicio</span>
+                                </button>
+
+                                <button class="btn btn-lg btn-light col-xs-12" style="border-radius:0px;   height:60px;  padding-top:18px; padding-bottom:20px;">
+
+                                     <span style="float:left;  " class="material-icons ">settings_phone</span>
+                                     <span > &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Publicidad</span>
+                                </button>
+
+
+                                <button class="btn btn-lg btn-light col-xs-12" style="border-radius:0px; padding:10px;height:40px; "> </button>
+                                <button class="btn btn-lg btn-light col-xs-12" style="border-radius:0px; padding:10px;height:40px; "> </button>
+                                <button class="btn btn-lg btn-light col-xs-12" style="border-radius:0px; padding:10px;height:40px; "> </button>
+                                <button class="btn btn-lg btn-light col-xs-12" style="border-radius:0px; padding:10px;height:40px; "> </button>
+                                <button class="btn btn-lg btn-light col-xs-12" style="border-radius:0px; padding:10px;height:40px; "> </button>
+                                <button class="btn btn-lg btn-light col-xs-12" style="border-radius:0px; padding:10px;height:40px; "> </button>
+                                <button class="btn btn-lg btn-light col-xs-12" style="border-radius:0px; padding:10px;height:40px; "> </button>
+                                <button class="btn btn-lg btn-light col-xs-12" style="border-radius:0px; padding:10px;height:40px; "> </button>
+                                <button class="btn btn-lg btn-light col-xs-12" style="border-radius:0px; padding:10px;height:40px; "> </button>
+
+                        </div>
+                  </div>
+
+
+                  <div class="col-sm-10" style="background-color:#ffffff;">
+
+                        <div class="row" style="border-bottom: solid 1px #ccc;">
+                                <div class="col-12" style="padding:2%;">
+                                    <h3>Administración de Publicidad</h3>
+                                </div>
+                         </div>
+
+
+                        <div class="row">
+                                <div class="col-4" style="min-height:500px;  border-right: solid 1px #ccc;  padding:0px; background-color: white;  ">
+
+
+                                        <div class="container">
+                                                <div class="row">
+                                                  <div class="col-12">
+                                                        <button type="button" data-toggle="modal" data-target="#myModal" class="btn btn-outline-dark" style="margin-top:10px; width: 40px;  float:right;  margin-bottom:10px;">+</button>
+
+
+
+
+
+
+
+
+
+
+                                                  </div>
+
+  <div class="col-12">
+
+  <div class="list-group">
+
+  <% if @publicidades != nil && @publicidades != ""
+
+  @publicidades.each do |p| %>
+
+  <div href="#" class="list-group-item  list-group-item-action" style="border-bottom: solid 1px #000;">
+
+  <div class="d-flex w-100 justify-content-between">
+    <h5 class="mb-1">Publicidad  <%=p.id %> </h5>
+    <small class="text-muted">  <%=p.fechainicio %> </small>
+  </div>
+
+  <p class="mb-1">Contenido: <%=p.contenido %> </p>
+
+  <div>
+    <%= link_to "Eliminar", {:controller => "mantener_publicidad", :action => "eliminarpublicidad_get", :valor => p.id }, :class => "btn btn-primary"%>|
+    <a class="btn btn-primary" style="color:white;" onclick='editarfila("<%=p.id.to_s %>", "<%=p.titulo.to_s %>", "<%=p.tarifa.to_s %>", "<%=p.fechainicio.to_s %>", "<%=p.fechafin.to_s %>", "<%=p.contenido.to_s %>")'   data-toggle='modal' data-target='#myModal2'  > Editar</a>
+    </div>
+
+
+
+
+
+ </div>
+ <br><br>
+
+
+
+
+
+
+
+<% end end %>
+
+
+
+
+
+
+
+
+                                                              </div>
+                                                  </div>
+
+                                                </div>
+                                              </div>
+
+
+                                </div>
+
+                                <div class="col-8" style="min-height:500px; padding:27px; ">
+
+                                    <div class="row">
+                                        <h4 style="margin-bottom: 9px;">Páginas a mostrar   <br>  </h4>
+
+                                    </div>
+
+                                    <div class="row">
+
+
+
+                                    <table class="table table-striped table-bordered table-hover dataTables-example" id="tablaUsuarios">
+
+                                    <thead>
+
+                                        <tr>
+
+
+                                            <th>Código de página</th>
+
+                                            <th>Descripción</th>
+
+
+                                        </tr>
+
+                                    </thead>
+
+                                    <tbody>
+
+                                        <% if @paginas != nil && @paginas != ""
+
+                                            @paginas.each do |p| %>
+
+                                        <tr class="gradeU">
+
+                                            <td><%=p.id %></td>
+
+                                            <td><%=p.descripcion %></td>
+
+                                        </tr>
+
+                                        <% end end %>
+
+                                    </tbody>
+
+                                </table>
+
+
+
+
+
+                                                <div class="card" style="width:100%; height:400px; background-color:#ccc;">
+                                                        <div class="card-body">
+                                                          Visualizar datos.
+                                                        </div>
+                                                      </div>
+
+
+                                    </div>
+
+                                </div>
+
+
+                        </div>
+
+                  </div>
+
+                </div>
+              </div>
+
+
+
+
+              <!-- Footer -->
+<footer class="page-footer font-small blue pt-4 bg-secondary">
+
+        <!-- Footer Links -->
+        <div class="container-fluid text-center text-md-left">
+
+          <!-- Grid row -->
+          <div class="row">
+
+            <!-- Grid column -->
+            <div class="col-md-6 mt-md-0 mt-3">
+
+              <!-- Content -->
+              <h5 class="text-uppercase colortext" >Sistema de Etsacionamientos</h5>
+              <p class="colortext">Desarrollo de sistema de reservas de estacionamientos y control de publicidad.</p>
+
+            </div>
+            <!-- Grid column -->
+
+            <hr class="clearfix w-100 d-md-none pb-3">
+
+            <!-- Grid column -->
+            <div class="col-md-3 mb-md-0 mb-3">
+
+              <!-- Links -->
+              <h5 class="text-uppercase colortext">Sistema</h5>
+
+              <ul class="list-unstyled">
+                <li>
+                  <a class="colortext" href="#!">Perfil</a>
+                </li>
+                <li>
+                  <a class="colortext" href="#!">Estacionamientos</a>
+                </li>
+                <li>
+                <a class="colortext" href="#!">Alquileres</a>
+              </li>
+
+
+              </ul>
+
+            </div>
+            <!-- Grid column -->
+
+            <!-- Grid column -->
+            <div class="col-md-3 mb-md-0 mb-3">
+
+              <!-- Links -->
+              <h5 class="text-uppercase colortext">Control</h5>
+
+              <ul class="list-unstyled">
+              <li>
+              <a class="colortext" href="#!">Publicidad</a>
+            </li>
+            <li>
+              <a class="colortext" href="#!">Publicaciones</a>
+            </li>
+              </ul>
+
+            </div>
+            <!-- Grid column -->
+
+          </div>
+          <!-- Grid row -->
+
+        </div>
+        <!-- Footer Links -->
+
+        <!-- Copyright -->
+        <div class="footer-copyright text-center py-3 colortext">© 2020 Copyright:
+          <a clas="colortext" href="https://mdbootstrap.com/"> sistema dereservadeestacionamientos.com</a>
+        </div>
+        <!-- Copyright -->
+
+      </footer>
+      <!-- Footer -->
+
+
+
+
+
+
+<!-- Modal -->
+  <div class="modal" id="myModal" role="dialog" aria-labelledby="exampleModalLabel"    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content" style="padding: 5%;">
+
+      <%= form_for :mantener_publicidad, :url => {:controller => "mantener_publicidad", :action => "nuevo_post"}, :method => :post, :html => { :class => "form-horizontal" , :id => "form_publicidad"}  do |f| %>
+
+        <div class="form-group row">
+          <h3 style="float:both; margin:auto;"><br>Nuevo Anuncio<br><br></h3>
+        </div>
+
+        <div class="form-group row">
+          <label for="inputEmail3" class="col-sm-2 col-form-label">Titulo</label>
+          <div class="col-sm-10">
+            <input type="text"  required  class="form-control" id="titulo" name="titulo">
+          </div>
+        </div>
+
+        <div class="form-group row">
+          <label for="inputPassword3" class="col-sm-2 col-form-label">Tarifa</label>
+          <div class="col-sm-10">
+            <input type="text" name="tarifa" id="tarifa" class="form-control" required  />
+          </div>
+        </div>
+
+        <div class="form-group row">
+          <label for="inputPassword3" class="col-sm-2 col-form-label">Fecha Inicio</label>
+          <div class="col-sm-10">
+            <input class="form-control"  type="date"  id="fechainicio" name="fechainicio" required />
+          </div>
+        </div>
+
+        <div class="form-group row">
+          <label for="inputPassword3" class="col-sm-2 col-form-label">Fecha Fin</label>
+          <div class="col-sm-10">
+            <input class="form-control" type="date"  required id="fechafin" name="fechafin"/>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="exampleFormControlTextarea1">Contenido</label>
+          <textarea class="form-control" id="contenido" name="contenido" required rows="3"></textarea>
+        </div>
+
+        <div class="form-group row">
+          <div class="col-sm-12"><br>
+            <button type="submit" class="btn btn-primary btn-lg" style="float: left; ">Guardar</button>
+            <button type="button"   class="btn btn-primary btn-lg" data-dismiss="modal" style="float: right; ">Cancelar</button>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+<!-- fin modal -->
+
+
+
+
+
+
+
+
+
+
+<!-- Modal -->
+  <div class="modal" id="myModal2" role="dialog" aria-labelledby="exampleModalLabel"    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content" style="padding: 5%;">
+
+      <%= form_for :mantener_publicidad, :url => {:controller => "mantener_publicidad", :action => "editar_post"}, :method => :post, :html => { :class => "form-horizontal" , :id => "form_publicidad"}  do |f| %>
+
+        <div class="form-group row">
+          <h3 style="float:both; margin:auto;"><br>Editar Anuncio<br><br></h3>
+        </div>
+
+        <div class="form-group row">
+          <label for="inputEmail3" class="col-sm-2 col-form-label">Titulo</label>
+          <div class="col-sm-10">
+          <input type="text"     class="form-control" id="id_edit" name="id_edit">
+
+          <input type="text"  required  class="form-control" id="titulo_edit" name="titulo_edit">
+          </div>
+        </div>
+
+        <div class="form-group row">
+          <label for="inputPassword3" class="col-sm-2 col-form-label">Tarifa</label>
+          <div class="col-sm-10">
+            <input type="text" name="tarifa_edit" id="tarifa_edit" class="form-control" required  />
+          </div>
+        </div>
+
+        <div class="form-group row">
+          <label for="inputPassword3" class="col-sm-2 col-form-label">Fecha Inicio</label>
+          <div class="col-sm-10">
+            <input class="form-control"  type="date"  id="fechainicio_edit" name="fechainicio_edit" required />
+          </div>
+        </div>
+
+        <div class="form-group row">
+          <label for="inputPassword3" class="col-sm-2 col-form-label">Fecha Fin</label>
+          <div class="col-sm-10">
+            <input class="form-control" type="date"  required id="fechafin_edit" name="fechafin_edit"/>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="exampleFormControlTextarea1">Contenido</label>
+          <textarea class="form-control" id="contenido_edit" name="contenido_edit" required rows="3"></textarea>
+        </div>
+
+        <div class="form-group row">
+          <div class="col-sm-12"><br>
+            <button type="submit" class="btn btn-primary btn-lg" style="float: left; ">Guardar</button>
+            <button type="button"   class="btn btn-primary btn-lg" data-dismiss="modal" style="float: right; ">Cancelar</button>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+<!-- fin modal -->
+
+  <script>
+
+      document.getElementById('cancelar').onclick = function(){
+        $('#myModal').modal('close');
+      }
+
+      function editarfila(id, titulo, tarifa, fechainicio, fechafin, contenido) {
+        document.getElementById('id_edit').value = id;
+        document.getElementById('titulo_edit').value = titulo;
+        document.getElementById('tarifa_edit').value = tarifa;
+        document.getElementById('fechainicio_edit').value = fechainicio;
+        document.getElementById('fechafin_edit').value = fechafin;
+        document.getElementById('contenido_edit').value = contenido;
+       }
+
+  </script>
+</body>
+
+</html>     

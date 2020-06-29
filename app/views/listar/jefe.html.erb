@@ -1,0 +1,301 @@
+<!doctype html>
+<html lang="en"><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Jekyll v4.0.1">
+    <title>Perfil</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.5/examples/album/">
+
+      <!-- Custom fonts for this template (icono Guardar cambios)-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+      <style>
+      .espacio {
+          margin-right: 5%;
+      }
+        .bd-placeholder-img {
+          font-size: 1.125rem;
+          text-anchor: middle;
+          -webkit-user-select: none;
+          -moz-user-select: none;
+          -ms-user-select: none;
+          user-select: none;
+        }
+
+        @media (min-width: 768px) {
+          .bd-placeholder-img-lg {
+            font-size: 3.5rem;
+          }
+        }
+
+        .colortext{
+          color:white;
+        }
+
+
+        .modal-backdrop.in {
+      opacity: 0.7;
+  }
+
+
+      </style>
+      <!-- Custom styles for this template -->
+      <link href="album.css" rel="stylesheet">
+    </head>
+      <body>
+        <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-secondary">
+            <img class="img-logo" src="<%= image_path('logo.png') %>"  alt="Logo de PostresFacilito" >
+          <a class="navbar-brand title" href="#">ARKING</a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarColor02">
+            <ul class="navbar-nav mr-auto">
+              <li class="nav-item active">
+              </li>
+              <li class="nav-item">
+              <a class="btn btn-outline-light my-2 my-sm-0" type="submit" href="#">PERFIL</a>
+              </li>
+              <li class="nav-item active">
+              <a class="btn btn-outline-light my-2 my-sm-0" type="submit"href="estacionamientos">ESTACIONAMIENTOS</a>
+              </li>
+              <li class="nav-item ">
+              <a class="btn btn-outline-light my-2 my-sm-0" type="submit"href="servicios">SERVICIOS</a>
+              </li>
+              <li class="nav-item">
+              <a class="btn btn-outline-light my-2 my-sm-0" type="submit"href="alquileres">ALQUILERES</a>
+              </li>
+              <li class="nav-item">
+              <a class="btn btn-outline-light my-2 my-sm-0" type="submit"href="inicio">SALIR</a>
+              </li>
+            </ul>
+          </div>
+              <button class="btn btn-outline-light my-2 my-sm-0" type="submit">LOG OUT</button>
+              <button class="btn btn-outline-light my-2 my-sm-0" type="submit">ESTADO</button>
+      </nav>
+
+      </header>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- As a heading -->
+<nav class="navbar navbar-light bg-light">
+  <span class="navbar-brand mb-0 h1">Registro Dueño de Estacionamiento</span>
+</nav>
+
+
+
+
+
+<%= form_for :upc, :html => { :method => :post, :class => "needs-validation", :novalidate => "novalidate", :id => "form_producto" }, :url => { :controller => "registro", :action => "estacionamiento_post" } do |f| %>
+
+
+<!-- :class => " form-horizontal", :id => "form_producto"-->
+
+
+  <div class="container-fluid container-publicidad">
+     <!-- Breadcrumbs-->
+       <div class="card mb-3 card-publicidad container-publicidad" >
+        <div class="container">
+           <br>
+           <form class="needs-validation" novalidate>
+
+
+              <div class="row">
+                 <div class="col-md-7 col-sm-12">
+
+                    <div class="form-group row">
+                       <label for="nombre" class="col-md-4 col-sm-3 col-form-label label-gray-left">Nombre:</label>
+                       <div class="col-md-7 col-sm-8">
+                          <input type=text class="form-control" id="nombre" placeholder="Ingrese su nombre" name="nombre"          pattern="^[a-zA-Z*\s]{0,20}"
+                              required="required">
+                              <div class="invalid-feedback">Ingresar un nombre válido</div>
+                            <!-- pattern="[A-Z]" -->
+                       </div>
+                    </div>
+
+                    <div class="form-group row">
+                       <label for="ApellidoPaterno" class="col-md-4 col-sm-3 col-form-label label-gray-left">Apellido Paterno:</label>
+                       <div class="col-md-7 col-sm-8">
+                          <input type="text" class="form-control" id="apellidoPaterno" placeholder="Ingrese su Apellido Paterno"
+                                  name="apellidoPaterno" pattern="^[a-zA-Z*\s]{0,20}"
+                             required="required">
+                             <div class="invalid-feedback">Ingresar un apellido válido</div>
+
+                       </div>
+                    </div>
+
+                    <div class="form-group row">
+                       <label for="apellidoMaterno" class="col-md-4 col-sm-3 col-form-label label-gray-left">Apellido Materno:</label>
+                       <div class="col-md-7 col-sm-8">
+                          <input type="text" class="form-control" id="apellidoMaterno" placeholder="Ingrese su Apellido Materno"
+                             name="apellidoMaterno" pattern="^[a-zA-Z*\s]{0,20}"required="required">
+                             <div class="invalid-feedback">Ingresar un apellido válido</div>
+                       </div>
+                    </div>
+
+
+                    <div class="form-group row">
+                       <label for="Sexo" class="col-md-4 col-sm-3 col-form-label label-gray-left">Sexo:</label>
+                       <div class="col-md-7 col-sm-8">
+                          <div class="form-check form-check-inline">
+                             <input class="form-check-input" type="radio" name="sexo" id="masculino"
+                                value="m" checked="checked">
+                             <label class="form-check-label" for="masculino">Masculino</label>
+                          </div>
+                          <div class="form-check form-check-inline">
+                             <input class="form-check-input" type="radio" name="sexo" id="masculino"
+                                value="f" checked="checked">
+                             <label class="form-check-label" for="masculino">Femenino</label>
+                          </div>
+                       </div>
+                    </div>
+
+
+                    <div class="form-group row">
+                       <label for="tipoDeDocumento" class="col-md-4 col-sm-3 col-form-label label-gray-left">Tipo de Documento:</label>
+                       <div class="col-md-7 col-sm-8">
+                          <select id="tipoDeDocumento" class="custom-select" required="required" name="tipoDeDocumento">
+                             <option selected>Seleccione</option>
+                             <option value="1">DNI</option >
+                             <option value="2">RUC</option >
+                          </select>
+                       </div>
+                    </div>
+
+                    <div class="form-group row">
+                       <label for="numDocumento" class="col-md-4 col-sm-3 col-form-label label-gray-left">Número de Documento:</label>
+                       <div class="col-md-7 col-sm-8">
+                          <input type="text" class="form-control" id="numDocumento" placeholder="Ingrese Número de Documento Identidad" pattern="[0-9]+" maxlength="11" minlength="8" name="numDocumento"
+                             required="required">
+                             <div class="invalid-feedback">Ingresar un dni válido</div>
+                       </div>
+                    </div>
+
+                    <div class="form-group row">
+                       <label for="tipoUsuario" class="col-md-4 col-sm-3 col-form-label label-gray-left">Tipo de Usuario:</label>
+                       <div class="col-md-7 col-sm-8">
+                          <select id="tipoUsuario" class="custom-select" name="tipoUsuario">
+                             <option selected>Seleccione...</option>
+                             <option value="1">Dueño</option>
+                             <option value="2">Cliente</option>
+                          </select>
+                       </div>
+                    </div>
+
+                   <div class="form-group row">
+                       <label for="correo" class="col-md-4 col-sm-3 col-form-label label-gray-left">Correo Electr&oacute;nico:</label>
+                       <div class="col-md-7 col-sm-8">
+                          <input type="email" class="form-control" id="correo" name="correo"
+                             placeholder="Ingrese Correo Electr&oacute;nico"
+                             required="required">
+                             <div class="invalid-feedback">Ingresar un correo válido</div>
+                       </div>
+                    </div>
+
+                    <div class="form-group row">
+                       <label for="confirmarCorreo" class="col-md-4 col-sm-3 col-form-label label-gray-left">Confirmar Correo:</label>
+                       <div class="col-md-7 col-sm-8">
+                          <input type="email" class="form-control" id="confirmarCorreo" name="confirmarCorreo"
+                             placeholder="Confirmar Correo Electr&oacute;nico"
+                             required="required">
+                             <div id="verifyEmailError"></div>
+                             <div class="invalid-feedback">Ingresar un correo válido</div>
+                       </div>
+                    </div>
+
+
+
+
+
+
+
+
+                    <div class="form-group row">
+                       <label for="contraseña" class="col-md-4 col-sm-3 col-form-label label-gray-left">Contraseña</label>
+                       <div class="col-md-7 col-sm-8">
+                          <input type="password" class="form-control" id="contraseña" name="contraseña"
+                             placeholder="Ingrese su Contraseña"
+                             required="required">
+                             <div class="invalid-feedback">Ingresar contraseña válida</div>
+                       </div>
+                    </div>
+
+                    <div class="form-group row">
+                       <label for="confirmarContraseña" class="col-md-4 col-sm-3 col-form-label label-gray-left">Confirmar Contraseña</label>
+                       <div class="col-md-7 col-sm-8">
+                          <input type="password" class="form-control" id="confirmarContraseña" name="confirmarContraseña"
+                             placeholder="Ingrese su contraseña nuevamente"
+                             required="required">
+                             <div class="invalid-feedback">Ingresar contraseña válida</div>
+                       </div>
+                    </div>
+
+                    <div class="form-group row">
+                       <label for="fechaNacimiento" class="col-md-4 col-sm-3 col-form-label label-gray-left">Fecha:</label>
+                       <div class="col-md-7 col-sm-8">
+                           <input type="date" class="form-control" id="fechaNacimiento" name="birthday" >
+                       </div>
+                    </div>
+
+                    <div class="form-group row">
+                       <label for="celular" class="col-md-4 col-sm-3 col-form-label label-gray-left">Celular:</label>
+                       <div class="col-md-7 col-sm-8">
+                          <input type="text" class="form-control" id="celular" name='celular'
+                            pattern="[0-9]+" maxlength="14" mnlength="8"
+                            placeholder="Ingrese número de celular"
+                            required="required">
+                             <div class="invalid-feedback">Ingresar un teléfono válido</div>
+                       </div>
+                    </div>
+            </div>
+
+
+            <div class="col-md-5 col-sm-12">
+                <div class="form-group row">
+                      <label for="foto"class="col-sm-2 col-form-label label-gray-left">Foto:</label>
+                    <div class="col-sm-15">
+                      <input type="file" class="form-control" id="foto" name="foto" required="required" accept="images/x-png,images/gif,images/jpeg">
+                </div>
+            </div>
+
+
+            <div class="form-group row">
+                 <div class="col-md-1"></div>
+                <img src="/images/avatar.png" class="col-md-10 img-fluid img-thumbnail"  alt="Responsive image">
+                <div class="col-md-1"></div>
+            </div>
+
+              <div class="row">
+                 <h4 class="col-md-3 col-lg-4 col-sm-10"> </h4>
+               <!--   <button type="submit" class=" btn btn-registrase "> -->
+                        <div class="float-right">
+                            <input class="btn btn-primary btn-lg "   type="submit" value="Guardar Cambios">
+                            <input class="btn btn-secondary btn-lg " type="reset" value="Cancelar">
+                        </div>
+               <!--     <div class="input-group-addon ">
+                       <i class="fa fa-thumbs-up" data-dismiss="modal"> Guardar cambios</i>
+                    </div>  -->
+
+                 </button>
+
+
+
+
+          <%end%>
